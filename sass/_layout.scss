@@ -1,0 +1,109 @@
+.container {
+    max-width: 120rem;  //So that the container can decrease if there is not enough space to display our 120rem(1,200 pixels) which is the width we want for this container, if the view port is less that 1,200 pixels, then we simply occupy 100% of the available view port width.
+    margin: 8rem auto; //centers the container inside of its parent element (body element)
+    background-color: var(--color-grey-light-1);
+    // box-shadow: 0 2rem 6rem rgba(0,0,0,.3);
+    box-shadow: var(--shadow-dark);
+    //min-height: 50rem; //testing 
+
+    //desctop first strategy
+    @media only screen and (max-width: $bp-largest) {
+        margin: 0; // me pare ekishim 8rem dhe auto
+        max-width: 100%;
+        width: 100%;
+    }
+
+
+}
+
+.header {
+    font-size: 1.4rem; //defaul font-size for the other element to inherit
+    height: 7rem;
+    background-color: #fff;
+    border-bottom:  var(--line);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media only screen and (max-width: $bp-smallest) {
+        flex-wrap: wrap;
+        align-content: space-around; // center do te jene te ngjitura
+        height: 11rem;
+        
+    }
+}
+
+//flex-container
+.content {
+    display: flex;
+
+    @media only screen and (max-width: $bp-medium) {
+        flex-direction: column;
+    } //all the flex items now are positioned in column
+    
+}
+
+//flex-items
+.sidebar{
+    background-color: var(--color-grey-dark-1);
+    flex: 0 0 18%; //shorthand for flex-basis
+    //nuk duam te rritet/ nuk duam as te zvogelohet/ por meqense basis ja kem dhene ne % ajo do te zvogelohet sapo te arrije limitin
+    //per te ndare menune nga copyright
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;    
+}
+
+//flex-items
+.hotel-view {
+   flex: 1; // duam qe te zere hapesiren e mbetur ne ekran ( rritet dhe zvogelohet ne varesi te hapesires qe ka ne dispozicion)
+
+   //height: 80rem; //test
+}
+
+// detail is the parent of both description and user-review
+.detail {
+    font-size: 1.4rem; //overall font-size of this bllok
+    display: flex;
+    // flex-wrap: wrap;
+    // justify-content: center;
+    padding: 4.5rem; //same as the right margin in the description
+    background-color: var(--color-grey-light-2);
+    border-bottom: var(--line);
+
+    //the larger mediaquery first
+    @media only screen and (max-width: $bp-medium) {
+        padding: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        flex-direction: column;
+        
+     }
+}
+
+.description {
+    background-color: #fff;
+    box-shadow: var(--shadow-light);
+    padding: 3rem;
+    flex: 0 0 60%; //60% of the space
+    margin-right: 4.5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-right: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-large) {
+        margin-right: 0;
+        margin-bottom: 3rem;
+     }
+}
+
+.user-reviews {
+    flex: 1; //it will grow the remainin space
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
