@@ -1,4 +1,4 @@
-# [ Trilo-CSS ](https://www.udemy.com/advanced-css-and-sass/)
+# [ Trilo-CSS ](https://arso-k.github.io/trilo-css/)
 Course: Advanced CSS and SASS
 #### Author: Jonas Schmedtmann
 ## Student: Arsonela Lalaj
@@ -14,3 +14,4 @@ Course: Advanced CSS and SASS
   * Responsive design with media queries to ensure optimal display on different devices
 * IDE used: VSCode
 
+[learn in Udemy](https://www.udemy.com/advanced-css-and-sass/)
